@@ -12,13 +12,10 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { FiExternalLink } from "react-icons/fi";
 import { IoMdMail } from "react-icons/io";
-import { IoClose } from "react-icons/io5";
 
 const Menu = () => {
   const container = useRef<HTMLDivElement | null>(null);
   const { isOpen, setOpen } = useMenu();
-
-  console.log(isOpen);
 
   const timeLine = useRef<gsap.core.Timeline | null>(null);
 
@@ -53,7 +50,7 @@ const Menu = () => {
 
   return (
     <div ref={container} className="py-2 ">
-      <div className="fixed top-0 left-0 w-full p-4 flex justify-between items-center z-[1]">
+      <div className="fixed top-0 left-0 w-full p-4 flex justify-between items-center z-[2]">
         <div className="menu-logo">
           <Link href="/" className="flex items-center gap-1">
             <Image
@@ -63,7 +60,7 @@ const Menu = () => {
               alt="Logo"
               className="object-cover rounded-full"
             />
-            Rof1yev
+            <span className="font-semibold">rof1yev</span>
           </Link>
         </div>
         <div className="menu-open" onClick={setOpen}>
@@ -72,14 +69,14 @@ const Menu = () => {
       </div>
 
       <div
-        className="menu-overlay fixed top-0 left-0 w-full p-4 flex flex-col justify-between bg-[#c5fb45] z-[2] h-full"
+        className="menu-overlay fixed top-0 left-0 w-full p-4 flex flex-col justify-between bg-[#c5fb45] z-[50] h-full"
         style={{
           clipPath: "polygon(0% 0%, 100% 0%, 100% 0, 0% 0%)",
         }}
       >
         <div className="">
           <div className="flex w-full items-center justify-between">
-            <Link href="/" className="flex items-center gap-1 text-black">
+            <Link href="/" className="flex items-center gap-1">
               <Image
                 src="/logo.png"
                 width={40}
@@ -87,7 +84,7 @@ const Menu = () => {
                 alt="Logo"
                 className="object-cover rounded-full"
               />
-              Rof1yev
+              <span className="font-semibold text-black">rof1yev</span>
             </Link>
 
             <p className="text-black cursor-pointer" onClick={setOpen}>
